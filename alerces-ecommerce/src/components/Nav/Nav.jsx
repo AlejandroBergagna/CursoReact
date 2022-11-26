@@ -1,9 +1,10 @@
 import './Nav.css';
+import CartWidget from '../CartWidget/CartWidget';
 
 function Nav(){
     return (
-        <nav>
-            <ul className="navbar">
+        <nav className="nav-bar">
+            <ul className="nav-bar">
                 <li>
                     <a href="">
                         Botellas
@@ -20,6 +21,9 @@ function Nav(){
                     </a>
                 </li>
             </ul>
+
+            <CartWidget/>
+        
         </nav>
 
     );
