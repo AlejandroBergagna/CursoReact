@@ -1,0 +1,11 @@
+.tamaCard{
+    width : 18rem;
+
+}
+
+.product-list__container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
