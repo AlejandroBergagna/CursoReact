@@ -5,14 +5,24 @@ import Button from './components/Button/Button';
 import Nav from './components/Nav/Nav';
 import CartWidget from './components/CartWidget/CartWidget';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-
+//import Saludo from './components/saludo/saludo';
+//import Counter from './components/Counter/Counter';
+//import Saludo2 from './components/Saludo2/Saludo2';
 
 function App() {
   return (
     <div className="App">
       <Nav />
       
-      <ItemListContainer greetings="Cervecería Alerces les da la Bienvenida"></ItemListContainer>
+      <ItemListContainer greetings="Cervecería Alerces les da la Bienvenida" />
+
+
+      {/* <Saludo /> */}
+
+      {/* <Saludo2 />
+
+      <Counter /> */}
+
 
       {/* <ItemListContainer>
         <p>Cerveza Artesanal Alerces</p>
