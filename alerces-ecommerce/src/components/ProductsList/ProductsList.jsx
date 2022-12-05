@@ -4,6 +4,7 @@ export default function ProductsList(props){
 
     const {data: products} = props;
     
+    
     // const products = [
     //     {
     //         id : 1,
@@ -21,13 +22,16 @@ export default function ProductsList(props){
     //         price : 300,
     //     },
     // ];
+    // const array = products.filter(product => product.id == 1);
+    // console.log(array);
 
+   
     return(
         <div className="product-list__container">
 
                 {products.map((product) => (
                    <div key = {product.id} className="card tamaCard">
-                        <img src="" className="card-img-top" alt="..."/>
+                        <img src={product.img} className="card-img-top" alt="..."/>
                         <div className="card-body">
                         <h5 className="card-title">{product.name}</h5>
                         <p className="card-text">{product.price}</p>

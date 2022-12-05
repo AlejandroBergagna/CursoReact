@@ -1,11 +1,32 @@
 import './Nav.css';
 import CartWidget from '../CartWidget/CartWidget';
+import Logo from '../Logo/Logo';
+import { NavLink } from 'react-router-dom';
 
-function Nav(){
+function Nav(props){
+    const { pages } = props;
+
     return (
-        <nav className="nav-bar">
+        <nav className="nav">
+            
+            <Logo />
+            
             <ul className="nav-bar">
-                <li>
+                {pages.map((page) => (
+                    <li key={`${page.id}`}>
+                        <NavLink
+                            to={page.id}
+                            className={({ isActive }) => 
+                            isActive ? "link is-active" : "link"
+                            }
+                        >
+                            {page.name}
+                        </NavLink>
+                    </li>
+                ))}
+            </ul>
+
+                {/* <li>
                     <a href="">
                         Botellas
                     </a>
@@ -19,8 +40,8 @@ function Nav(){
                     <a href="">
                         Servicios
                     </a>
-                </li>
-            </ul>
+                </li> */}
+            
 
             <CartWidget/>
         

@@ -1,3 +1,4 @@
+import { Routes, Route } from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
 
@@ -11,15 +12,26 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 //import Counter from './components/Counter/Counter';
 //import Saludo2 from './components/Saludo2/Saludo2';
 import ProductsList from './components/ProductsList/ProductsList';
-
+import Layout from './components/Layout/components/Layout';
+import { useParams } from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
-      <Nav />
+      {/* <Nav /> */}
+      <Layout>
+        <Routes>
+          <Route path="/" element={<ItemListContainer />} />
+          <Route path="/home" element={<ItemListContainer />} />
+          <Route path="/botellas/:botellas" element={<ItemListContainer />} />
+          <Route path="/barriles/:barriles" element={<ItemListContainer />} />
+        </Routes>
+      </Layout>
+
+      {/* <Nav />
       
-      <ItemListContainer />
-      
+      <ItemListContainer /> */}
+
       {/* <ItemListContainer greetings="Cervecería Alerces les da la Bienvenida" /> */}
 
       {/* <ProductsList /> */}
