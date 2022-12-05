@@ -8,19 +8,41 @@ export default function ItemListContainer(){
     const [products, setProducts] = useState([]);
     const { category } = useParams();
 
-    useEffect(()=>{
-        GetProducts()
+    useEffect (()=>{
+        setProducts([]);
+        GetProducts(category)
             .then((prod) => setProducts(prod))
             .catch((error)=>{
                 console.error('[Products Service] error - ', error);
                 setProducts([]);
             })
+    },[category]);
+    
+    // useEffect(()=>{
+    
+    //     GetProducts()
+    //         .then((prod) => setProducts(prod));
 
+    //     if (category === undefined)
+    //     {
+    //     GetProducts()
+    //         .then((prod) => setProducts(prod));
+    //     }else{
+    //     GetProducts()
+    //         .then(setProducts(products.filter(prod => prod.category === category)));
 
-    },[]);
+            
+    //     }
+
+    // }, [category]);
+    
 
     console.log(category);
     
+    const array = products.filter(prod => prod.category === category);
+
+    console.log(array);
+
     const isProductsEmpty = products.length == 0;
     
     return(

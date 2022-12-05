@@ -23,8 +23,8 @@ function App() {
         <Routes>
           <Route path="/" element={<ItemListContainer />} />
           <Route path="/home" element={<ItemListContainer />} />
-          <Route path="/botellas/:botellas" element={<ItemListContainer />} />
-          <Route path="/barriles/:barriles" element={<ItemListContainer />} />
+          <Route path="/:category" element={<ItemListContainer />} />
+          <Route path="/:category" element={<ItemListContainer />} />
         </Routes>
       </Layout>
 
