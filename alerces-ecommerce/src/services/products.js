@@ -1,3 +1,6 @@
+// import logo11 from "../Components/Logo/logo11.png";
+
+import logo11 from './estiloscotch11.jpg'
 
 const PRODUCTS_LIST = [
         {
@@ -25,28 +28,28 @@ const PRODUCTS_LIST = [
             category : "barriles",
             name : "Barril x 9 lts",
             price : 3500,
-            img : "./logo11.png"
+            img : logo11
         },
         {
             id : 5,
             category : "barriles",
             name : "Barril x 20 lts",
             price : 3500,
-            img : "./logo11.png"
+            img : ""
         },
         {
             id : 6,
             category : "barriles",
             name : "Barril x 30 lts",
             price : 3500,
-            img : "./logo11.png"
+            img : ""
         },
         {
             id : 7,
             category : "barriles",
             name : "Barril x 50 lts",
             price : 3500,
-            img : "./logo11.png"
+            img : ""
         },
 
 ];

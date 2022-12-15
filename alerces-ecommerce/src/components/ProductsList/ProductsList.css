@@ -1,5 +1,6 @@
 .tamaCard{
     width : 18rem;
+    align-items: center;
 
 }
 
@@ -8,4 +9,9 @@
     flex-direction: row;
     flex-wrap: wrap;
     gap: 2rem;
+}
+
+.image-style {
+    width: 100px;
+    justify-content: center;
 }
