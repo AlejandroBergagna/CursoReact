@@ -8,9 +8,8 @@ import Button from './components/Button/Button';
 import Nav from './components/Nav/Nav';
 import CartWidget from './components/CartWidget/CartWidget';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-//import Saludo from './components/saludo/saludo';
-//import Counter from './components/Counter/Counter';
-//import Saludo2 from './components/Saludo2/Saludo2';
+import ItemDetail from './components/ItemDetail/ItemDetail';
+
 import ProductsList from './components/ProductsList/ProductsList';
 import Layout from './components/Layout/components/Layout';
 import { useParams } from 'react-router-dom';
@@ -24,7 +23,9 @@ function App() {
           <Route path="/" element={<ItemListContainer />} />
           <Route path="/home" element={<ItemListContainer />} />
           <Route path="/:category" element={<ItemListContainer />} />
-          <Route path="/:category" element={<ItemListContainer />} />
+          <Route path="/details/:id" element={<ItemDetail />} />
+          
+          {/* <Route path="/:category" element={<ItemListContainer />} /> */}
         </Routes>
       </Layout>
 

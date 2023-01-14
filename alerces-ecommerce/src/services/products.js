@@ -1,6 +1,7 @@
 // import logo11 from "../Components/Logo/logo11.png";
 
 import logo11 from './estiloscotch11.jpg'
+import imgapa from './estiloapa.png'
 
 const PRODUCTS_LIST = [
         {
@@ -15,6 +16,7 @@ const PRODUCTS_LIST = [
             category : "botellas",
             name : "Botella 500 cc",
             price : 400,
+            img : imgapa
         },
         {
             id : 3,

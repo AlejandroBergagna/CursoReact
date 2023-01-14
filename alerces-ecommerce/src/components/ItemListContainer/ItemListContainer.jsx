@@ -1,22 +1,66 @@
 import { useEffect, useState } from "react";
 import ProductsList from "../ProductsList/ProductsList";
-import { GetProducts } from "../../services/products";
+// import { GetProducts } from "../../services/proucts";
 import { useParams } from "react-router-dom";
+
+import { database } from "../../firebase/config";
+import { doc, getDoc, collection, getDocs, where, query } from "firebase/firestore"; 
+
 
 export default function ItemListContainer(){
   
+
+
     const [products, setProducts] = useState([]);
     const { category } = useParams();
 
-    useEffect (()=>{
-        setProducts([]);
-        GetProducts(category)
-            .then((prod) => setProducts(prod))
-            .catch((error)=>{
-                console.error('[Products Service] error - ', error);
-                setProducts([]);
-            })
-    },[category]);
+
+    useEffect(() => {
+        const productsCollection = collection(database, 'items');
+    
+        let q;
+
+        // console.log(productsCollection);
+        if (category == undefined) {
+            q=query(
+                productsCollection
+            )
+        }else{
+            q = query(
+                productsCollection,
+                where('category', '==', category)
+              );
+        }
+
+        // const q = query(
+        //   productsCollection,
+        //   where('category', '==', category)
+        // );
+    
+        getDocs(q)
+          .then((querySnapshot) => {
+            // console.log(querySnapshot);
+
+            const productList = querySnapshot.docs.map((doc) => doc);
+            setProducts(productList);
+
+
+          })
+
+
+
+      }, [category])
+
+
+    // useEffect (()=>{
+    //     setProducts([]);
+    //     GetProducts(category)
+    //         .then((prod) => setProducts(prod))
+    //         .catch((error)=>{
+    //             console.error('[Products Service] error - ', error);
+    //             setProducts([]);
+    //         })
+    // },[category]);
     
     // useEffect(()=>{
     
@@ -37,12 +81,7 @@ export default function ItemListContainer(){
     // }, [category]);
     
 
-    console.log(category);
-    
-    const array = products.filter(prod => prod.category === category);
-
-    console.log(array);
-
+ 
     const isProductsEmpty = products.length == 0;
     
     return(
