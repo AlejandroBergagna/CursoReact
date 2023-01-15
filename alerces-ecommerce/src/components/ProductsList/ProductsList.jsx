@@ -13,11 +13,11 @@ export default function ProductsList(props){
                 {products.map((product) => (
                    
                    <div key = {product.id} className="card tamaCard">
-                        {/* <img src={product.img} className="card-img-top image-style" alt="..."/> */}
-                        {console.log(product)}
+                        <img src={product.data().img} className="card-img-top image-style" alt="..."/>
+                        
                         <div className="card-body">
                         <h5 className="card-title">{product.data().name}</h5>
-                        <p className="card-text">{product.data().price}</p>
+                        <p className="card-text">${product.data().price}</p>
                         <NavLink  to={'/details/' + product.id}
                         >
                             Ver detalles

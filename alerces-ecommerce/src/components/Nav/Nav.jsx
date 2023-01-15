@@ -26,21 +26,6 @@ function Nav(props){
                 ))}
             </ul>
 
-                {/* <li>
-                    <a href="">
-                        Botellas
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        Barriles
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        Servicios
-                    </a>
-                </li> */}
             
 
             <CartWidget/>

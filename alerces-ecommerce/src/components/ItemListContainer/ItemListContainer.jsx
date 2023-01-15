@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import ProductsList from "../ProductsList/ProductsList";
-// import { GetProducts } from "../../services/proucts";
 import { useParams } from "react-router-dom";
 
 import { database } from "../../firebase/config";
@@ -20,7 +19,6 @@ export default function ItemListContainer(){
     
         let q;
 
-        // console.log(productsCollection);
         if (category == undefined) {
             q=query(
                 productsCollection
@@ -32,14 +30,9 @@ export default function ItemListContainer(){
               );
         }
 
-        // const q = query(
-        //   productsCollection,
-        //   where('category', '==', category)
-        // );
     
         getDocs(q)
           .then((querySnapshot) => {
-            // console.log(querySnapshot);
 
             const productList = querySnapshot.docs.map((doc) => doc);
             setProducts(productList);
@@ -51,34 +44,6 @@ export default function ItemListContainer(){
 
       }, [category])
 
-
-    // useEffect (()=>{
-    //     setProducts([]);
-    //     GetProducts(category)
-    //         .then((prod) => setProducts(prod))
-    //         .catch((error)=>{
-    //             console.error('[Products Service] error - ', error);
-    //             setProducts([]);
-    //         })
-    // },[category]);
-    
-    // useEffect(()=>{
-    
-    //     GetProducts()
-    //         .then((prod) => setProducts(prod));
-
-    //     if (category === undefined)
-    //     {
-    //     GetProducts()
-    //         .then((prod) => setProducts(prod));
-    //     }else{
-    //     GetProducts()
-    //         .then(setProducts(products.filter(prod => prod.category === category)));
-
-            
-    //     }
-
-    // }, [category]);
     
 
  
@@ -97,11 +62,3 @@ export default function ItemListContainer(){
     )
 }
 
-// function ItemListContainer(props) {
-//     const {greetings} = props;
-//     return (
-//         <h1 className="list-container">{greetings}</h1>
-//     )
-// }
-
-// export default ItemListContainer;
