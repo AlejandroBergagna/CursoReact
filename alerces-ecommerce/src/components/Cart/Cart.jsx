@@ -166,7 +166,7 @@ export default function Cart(){
          
                  <div key = {product.id} className="carrito">
                         <img src={product.img} className="img" alt="..."/>
-                        {/* <div className=""> */}
+          
                         <h5 className="">{product.name}</h5>
                         <p className="">${product.price}</p>
                         <p className="">{product.quantity}</p>
@@ -175,24 +175,11 @@ export default function Cart(){
                         onClick={()=>onClickHandler(product.id)}
                         >Quitar Item
                         </button>
-                        {/* </div> */}
+          
                 </div>
 
 
-                //  <div key = {product.id} className="card tamaCard">
-                //         <img src={product.img} className="card-img-top image-style" alt="..."/>
-                //         <div className="card-body">
-                //         <h5 className="card-title">{product.name}</h5>
-                //         <p className="card-text">${product.price}</p>
-                //         <p className="card-text">{product.quantity}</p>
-                //         <p className="card-text">${product.price * product.quantity}</p>
-                //         <button
-                //         onClick={()=>onClickHandler(product.id)}
-                //         >Remove Item
-                //         </button>
-                //         </div>
-                //     </div>
-               
+                      
                
                ))}
 
